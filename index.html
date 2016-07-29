@@ -105,7 +105,7 @@ $("#btnConsultaAct").tap(function (){
     success: function(datos){
       var reg=$.parseJSON(datos);
       var result=$("#todosRegAct");
-      result.html('<table border="1"id="tb4"><th>Id</th><th>Nombre del café Internet</th><th>Dirección</th><th>Nombre del Propietario</th><th>Telefono</th><th>Latitud</th><th>Longitud</th><th>Foto</th><th>Clasificación</th>');
+      result.html('<table border="1"id="tb4"><th>Id</th><th>Nombre</th><th>Dirección</th><th>RFC</th><th>Telefono</th><th>Latitud</th><th>Longitud</th><th>Foto</th><th>Clasificación</th>');
       var fila=$("#tb4");
       for(var i in reg){
         fila.append('<tr><td>'+reg[i].IdServicios+'</td><td>'+reg[i].NombreServicio+'</td><td>'+reg[i].Direccion+'</td><td>'+reg[i].RFC+'</td><td>'+reg[i].Telefono+'</td><td>'+reg[i].Latitud+'</td><td>'+reg[i].Longitud+'</td><td>'+reg[i].Foto+'</td><td>'+reg[i].clasificacion_id+'</td></tr>');
@@ -125,7 +125,7 @@ $("#btnCargDatos").tap(function (){
     success: function(datos){
       var resp=$.parseJSON(datos);
       var controles=$("#datIDAct");
-      controles.html('ID:<input type="text" id="id1" disabled="true"/><br />Nombre del café Internet:<input type="text" id="n1" /><br />Dirección:<input type="text" id="dir1" /><br />Nombre del propietario:<input type="text" id="rfc1" /><br />Teléfono:<input type="text" id="tel1" /><br />Latitude:<input type="text" id="lat1" /><br />Longitude:<input type="text" id="lon1" /><br />Foto:<input type="text" id="fot1" /><br />Clasificación:<input type="text" id="cla1" />');
+      controles.html('ID:<input type="text" id="id1" disabled="true"/><br />Nombre:<input type="text" id="n1" /><br />Dirección:<input type="text" id="dir1" /><br />RFC:<input type="text" id="rfc1" /><br />Teléfono:<input type="text" id="tel1" /><br />Latitude:<input type="text" id="lat1" /><br />Longitude:<input type="text" id="lon1" /><br />Foto:<input type="text" id="fot1" /><br />Clasificación:<input type="text" id="cla1" />');
       $("#id1").val(resp[0].IdServicios);
       $("#n1").val(resp[0].NombreServicio);
       $("#dir1").val(resp[0].Direccion);
@@ -392,7 +392,7 @@ text-align:center;
       </div>
       <div data-role="content" >
 	       <p>Desarrolldo por: </p>
-         <p>Ing. Daniel Hernandez Flores </p>
+         <p>Ing. Oscar Anaya Flores </p>
          <p>Materia: </p>
          <p>Base de Datos para Dispositivos Móviles </p>
          <p>Semestre: </p>
